@@ -43,10 +43,47 @@ Implementação de um workflow automatizado (`.github/workflows/main.yml`) conte
 3.  **Deploy:** Publicação automatizada no GitHub Pages disparada após o merge na branch `main`.
 
 ## 3. Documentação
-O arquivo `README.md` deve conter:
-1.  Link público do currículo em produção.
-2.  Instruções detalhadas para execução do ambiente local via Docker.
-3.  Prints ou descrição da configuração de proteção da branch `main` aplicada no GitHub.
+
+### 3.1. Link Público em Produção
+O site está publicado e pode ser acessado em:
+[https://pauloschiochetufpr.github.io/ds881-curriculo-grr20242749/](https://pauloschiochetufpr.github.io/ds881-curriculo-grr20242749/)
+
+### 3.2. Execução do Ambiente Local via Docker
+
+O projeto utiliza Docker e Docker Compose para isolar o ambiente de desenvolvimento e suportar *hot reload* na porta `8080`.
+
+#### Pré-requisitos
+*   Docker instalado na máquina hospedeira.
+*   Docker Compose instalado.
+
+#### Passos para Execução
+
+1.  **Subir o contêiner de desenvolvimento:**
+    No diretório raiz do projeto, execute o comando:
+    ```bash
+    docker compose up --build
+    ```
+    Este comando irá construir a imagem Docker baseada no Node.js, instalar as dependências e iniciar o servidor de desenvolvimento.
+
+2.  **Acessar a aplicação:**
+    Abra seu navegador e acesse:
+    [http://localhost:8080](http://localhost:8080)
+
+3.  **Desenvolvimento ativo (*Hot Reload*):**
+    Qualquer alteração feita nos arquivos dentro da pasta `src/` refletirá automaticamente no navegador sem necessidade de reiniciar o contêiner.
+
+4.  **Parar o servidor:**
+    Use `Ctrl + C` no terminal ou execute:
+    ```bash
+    docker compose down
+    ```
+
+### 3.3. Configuração de Proteção da Branch `main`
+
+A branch `main` está configurada com as seguintes regras de proteção no GitHub:
+1.  **Require a pull request before merging:** Alterações diretas via push na `main` são bloqueadas.
+2.  **Require status checks to pass before merging:** O merge de um Pull Request exige que o pipeline de CI/CD (`build-and-lint`) termine com sucesso.
+
 
 ## 4. Critérios de Avaliação
 
