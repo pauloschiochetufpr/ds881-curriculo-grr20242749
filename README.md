@@ -105,3 +105,8 @@ A entrega deve ser realizada através do formulário disponibilizado pelo profes
 ---
 
 > **Atenção:** Não esqueça de anexar no final deste README ou na documentação do projeto um print comprovando que a regra de **Branch Protection** da `main` foi configurada no GitHub.
+
+<img width="728" height="564" alt="image" src="https://github.com/user-attachments/assets/fbe3e2e0-48d2-4b99-8136-879b888a74cb" />
+<img width="732" height="814" alt="image" src="https://github.com/user-attachments/assets/7276735e-5035-4916-9319-b4550b664a7d" />
+
+
